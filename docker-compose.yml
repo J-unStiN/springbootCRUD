@@ -1,0 +1,18 @@
+version: '3'
+services:
+  rdb:
+    image: mariadb
+    restart: always
+    ports:
+      - 13301:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: nerdy
+
+  redis:
+    image: redis:alpine
+    container_name: nerdy_redis
+    command: redis-server --requirepass mypassword --port 6379
+    hostname: redis
+    ports:
+      - 13401:6379
