@@ -13,36 +13,32 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    @OneToMany
-    private List<Item> item;
+    @ManyToOne
+    @JoinColumn(name = "item_id")
+    private Item itemId;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "member_id")
     private Member memberId;
 
-
-    private String toName;
+    private String itemForYou;
 
     private String address;
 
+    @Column(length = 11)
     private String phoneNumber;
 
     private int totalPrice;
 
-    private String orderContents;
+    private String orderMemo;
 
     @Enumerated(EnumType.STRING)
     private OrderCredit orderCredit;
 
-
     @CreationTimestamp
-    @Column(name = "created_time", nullable = false)
     private LocalDateTime createdTime;
-
-
-
-
 
 
 }

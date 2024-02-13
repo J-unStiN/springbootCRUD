@@ -8,9 +8,6 @@ public class Authority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Enumerated(EnumType.STRING)
-    private AuthType authType;
+    private Long id;
 
 }

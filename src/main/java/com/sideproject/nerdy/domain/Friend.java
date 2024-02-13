@@ -11,19 +11,17 @@ public class Friend {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member memberMe;
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member FriendMember;
-
+    @JoinColumn(name = "friend_member_id")
+    private Member friendMember;
 
     @CreationTimestamp
-    @Column(name = "created_time")
     private LocalDateTime createdTime;
 
 }

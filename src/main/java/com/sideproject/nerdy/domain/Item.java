@@ -1,6 +1,7 @@
 package com.sideproject.nerdy.domain;
 
 
+import com.sideproject.nerdy.VO.ItemCategory;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -12,7 +13,7 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     private ItemCategory itemCategory;
@@ -22,7 +23,5 @@ public class Item {
     private int price;
 
     @CreationTimestamp
-    @Column(name = "created_time", nullable = false)
     private LocalDateTime createdTime;
-
 }

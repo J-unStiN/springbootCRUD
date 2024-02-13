@@ -1,13 +1,13 @@
 version: '3'
 services:
   rdb:
-    image: mariadb
+    image: mysql:8.0.33
     restart: always
     ports:
       - 13301:3306
     environment:
-      MARIADB_ROOT_PASSWORD: 1234
-      MARIADB_DATABASE: nerdy
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: nerdy_db
 
   redis:
     image: redis:alpine
