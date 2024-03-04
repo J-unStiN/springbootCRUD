@@ -2,6 +2,9 @@ package com.sideproject.nerdy.domain;
 
 import com.sideproject.nerdy.VO.OrderCredit;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -9,6 +12,9 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
+@Builder
+@Getter
+@AllArgsConstructor
 public class Order {
 
     @Id
@@ -40,5 +46,8 @@ public class Order {
     @CreationTimestamp
     private LocalDateTime createdTime;
 
+    protected Order() {
+
+    }
 
 }

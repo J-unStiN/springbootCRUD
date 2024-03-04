@@ -3,12 +3,18 @@ package com.sideproject.nerdy.domain;
 
 import com.sideproject.nerdy.VO.BoardCategoryType;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Builder
+@Getter
+@AllArgsConstructor
 public class Board {
 
     @Id
@@ -33,5 +39,7 @@ public class Board {
     private LocalDateTime updatedTime;
 
 
+    protected Board() {
 
+    }
 }

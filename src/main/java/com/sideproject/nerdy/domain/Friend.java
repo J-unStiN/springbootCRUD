@@ -1,12 +1,18 @@
 package com.sideproject.nerdy.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Builder
+@Getter
+@AllArgsConstructor
 public class Friend {
 
     @Id
@@ -24,4 +30,7 @@ public class Friend {
     @CreationTimestamp
     private LocalDateTime createdTime;
 
+    protected Friend() {
+
+    }
 }
